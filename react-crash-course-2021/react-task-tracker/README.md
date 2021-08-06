@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# react crash course 2021
+- **react** is a library for building user interfaces
+- runs on the client as a SPA
+- can be used to build full stack apps by communicating with a server/API (eg. MERN stack)
+- often referred to as a front-end **framework**
+  - because it is capable and directly comparable to a framework such as Angular or Vue
+- Why would you use React?
+  - structure the "view" layer of your app
+  - reusable components with their own state
+  - JSX - dynamic markup
+  - interactive UIs with Virtual DOM
+  - Performance & testing
+  - Very popular in the industry
+- What should you know first?
+  - Data types, variables, functions, loops, etc (basic knowledge of JS)
+  - Promises & asynchronous programming
+  - Array methods like forEach() & map()
+  - Fetch API & making HTTP requests
+- When using React, think of your UI as **a bunch of separate components**
+- Components: Functions vs. Classes
+  ``` jsx
+  // Functional Component
+  export const Header = () => {
+    return (
+      <div>
+        <h1>My Header</h1>
+      </div>
+    )
+  }
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  // Class Component
+  export default class Header extends React.Component {
+    render() {
+      return (
+        <div>
+          <h1>My Header</h1>
+        </div>
+      )
+    }
+  }
+  ```
+- Working with state
+  - components can have "state" (determines how a component renders and behaves)
+  - "App" or "global" state refers to state that is available to the entire UI
+    * not just a single component
+  - Later React 16.8, we can use functional compoennts with hooks
+    * Prior to React 16.8, we had to use class based components to use state.
+- React Hooks
+  - functions that let us **hook** into the React state and lifecycle features from function components
+    * useState - Returns a stateful value and a function to update it
+    * useEffect - Perform side effects in function components
+    * useContext, useReducer, userRef - Beyond the scope of this course...
+  
+---
+## Let's Learn React!
+- install NodeJS (LTS version)
+- install chrome extensions, React Developer Tools
+  ``` cmd
+  $ npm --version
+  $ npx create-react-app react-task-tracker
+  $ cd react-task-tracker
+  $ code .
+  $ npm start   # start dev server with webpack (default 3000 port)
+  ```
+- install VS Code extensions
+  - ES7 React/Redux/GraphQL/React-Native snippets
+- install node modules
+  ``` cmd
+  $ npm i react-icons
 
-## Available Scripts
+  # build
+  # chrome react dev tools icons will be changed (not orange color - production build)
+  $ npm run build
+  $ npm i -g serve
+  $ serve -s build -p 8000
 
-In the project directory, you can run:
+  # run json server
+  $ npm i json-server
 
-### `yarn start`
+  $ npm i react-router-dom
+  ```
+  ``` json
+  # package.json
+  {
+    ...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    "scripts": {
+      ...
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+      "server": "json-server --watch db.json --port 5000"
+    },
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ...
+  }
+  ```
