@@ -1,6 +1,8 @@
 # React Realtime Chat Messaging
 
-> https://www.youtube.com/watch?v=MJzbJQLGehs > https://github.com/adrianhajdin/project_medical_pager_chat
+> https://www.youtube.com/watch?v=MJzbJQLGehs
+
+> https://github.com/adrianhajdin/project_medical_pager_chat
 
 ## Set up
 
@@ -26,3 +28,14 @@
     - go to dashboard and check `key` and `secret`
 
 - server
+
+  ```bash
+  # move to server dir
+  $ touch index.js
+
+  # initialize node project
+  $ npm init -y
+
+  # install modeuls
+  $ npm i bcrypt crypto dotenv express getstream stream-chat nodemon twilio cors
+  ```
