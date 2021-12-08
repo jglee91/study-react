@@ -39,3 +39,9 @@
   # install modeuls
   $ npm i bcrypt crypto dotenv express getstream stream-chat nodemon twilio cors
   ```
+
+## Stream Chat API
+
+1. go to dashboard
+2. select app
+3. Chat > Explorer > users > `check signup account`
