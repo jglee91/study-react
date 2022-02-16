@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GlobalStyles from './global.styles';
-import { Wrapper, Gradient } from './app.styles';
+import { Wrapper, GradientBg } from './app.styles';
 
 import {
   Footer,
@@ -18,10 +18,10 @@ const App = () => {
     <>
       <GlobalStyles />
       <Wrapper>
-        <Gradient>
+        <GradientBg>
           <Navbar />
           <Header />
-        </Gradient>
+        </GradientBg>
         <Brand />
         <WhatGPT3 />
         <Features />
