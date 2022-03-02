@@ -21,3 +21,8 @@
   $ npm install react-icons
   $ npm install styled-components
   ```
+
+## Work Process
+1. Just follow youtube (include source code)
+2. Refactoring (BEM -> with styled-components)
+3. Apply static language (typescript)

@@ -1,8 +1,5 @@
 import React from 'react';
 
-import GlobalStyles from './global.styles';
-import { Wrapper, GradientBg } from './app.styles';
-
 import {
   Footer,
   Blog,
@@ -12,26 +9,24 @@ import {
   Header,
 } from './containers';
 import { CTA, Brand, Navbar } from './components';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
-    <>
-      <GlobalStyles />
-      <Wrapper>
-        <GradientBg>
-          <Navbar />
-          <Header />
-        </GradientBg>
-        <Brand />
-        <WhatGPT3 />
-        <Features />
-        <Possibility />
-        <CTA />
-        <Blog />
-        <Footer />
-      </Wrapper>
-    </>
+    <div className="App">
+      <div className="gradient__bg">
+        <Navbar />
+        <Header />
+      </div>
+      <Brand />
+      <WhatGPT3 />
+      <Features />
+      <Possibility />
+      <CTA />
+      <Blog />
+      <Footer />
+    </div>
   );
-};
+}
 
 export default App;

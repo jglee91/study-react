@@ -1,83 +1,57 @@
 import React, { useState } from 'react';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-import {
-  Gpt3Navbar,
-  Gpt3NavbarLinks,
-  Gpt3NavbarLinksLogo,
-  Gpt3NavbarLinksContainer,
-  Gpt3NavbarSign,
-  Gpt3NavbarMenu,
-  Gpt3NavbarMenuContainer,
-  Gpt3NavbarMenuContainerLinks,
-  Gpt3NavbarMenuContainerLinksSign,
-} from './navbar.styles';
+import { RiMenu3Line } from 'react-icons/ri';
 import logo from '../../assets/logo.svg';
+import './navbar.css';
 
-const Menu = () => (
-  <>
-    <p>
-      <a href="#home">Home</a>
-    </p>
-    <p>
-      <a href="#wgpt3">What is GPT?</a>
-    </p>
-    <p>
-      <a href="#possibility">Open AI</a>
-    </p>
-    <p>
-      <a href="#features">Case Studies</a>
-    </p>
-    <p>
-      <a href="#blog">Library</a>
-    </p>
-  </>
-);
+// BEM -> Block Element Modifier
 
-const Navbar = () => {
+function Menu() {
+  return (
+    <>
+      <p><a href="#home">Home</a></p>
+      <p><a href="#wgpt3">What is GPT3?</a></p>
+      <p><a href="#possibility">Open AI</a></p>
+      <p><a href="#features">Case Studies</a></p>
+      <p><a href="#blog">Library</a></p>
+    </>
+  );
+}
+
+function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <Gpt3Navbar>
-      <Gpt3NavbarLinks>
-        <Gpt3NavbarLinksLogo>
+    <div className="gpt3__navbar">
+      <div className="gpt3__navbar-links">
+        <div className="gpt3__navbar-links_logo">
           <img src={logo} alt="logo" />
-        </Gpt3NavbarLinksLogo>
-        <Gpt3NavbarLinksContainer>
+        </div>
+        <div className="gpt3__navbar-links_container">
           <Menu />
-        </Gpt3NavbarLinksContainer>
-      </Gpt3NavbarLinks>
-      <Gpt3NavbarSign>
+        </div>
+      </div>
+      <div className="gpt3__navbar-sign">
         <p>Sign in</p>
         <button type="button">Sign up</button>
-      </Gpt3NavbarSign>
-      <Gpt3NavbarMenu>
-        {toggleMenu ? (
-          <RiCloseLine
-            color="#fff"
-            size={27}
-            onClick={() => setToggleMenu(false)}
-          />
-        ) : (
-          <RiMenu3Line
-            color="#fff"
-            size={27}
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
+      </div>
+      <div className="gpt3__navbar-menu">
+        {toggleMenu
+          ? <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(false)} />
+          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
         {toggleMenu && (
-          <Gpt3NavbarMenuContainer>
-            <Gpt3NavbarMenuContainerLinks>
+          <div className="gpt3__navbar-menu_contianer scale-up-center">
+            <div className="gpt3__navbar-menu_container-links">
               <Menu />
-              <Gpt3NavbarMenuContainerLinksSign>
+              <div className="gpt3__navbar-menu_container-links-sign">
                 <p>Sign in</p>
                 <button type="button">Sign up</button>
-              </Gpt3NavbarMenuContainerLinksSign>
-            </Gpt3NavbarMenuContainerLinks>
-          </Gpt3NavbarMenuContainer>
+              </div>
+            </div>
+          </div>
         )}
-      </Gpt3NavbarMenu>
-    </Gpt3Navbar>
+      </div>
+    </div>
   );
-};
+}
 
 export default Navbar;
